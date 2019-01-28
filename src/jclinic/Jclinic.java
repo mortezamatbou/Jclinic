@@ -1,4 +1,4 @@
-package sepidclinic;
+package jclinic;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -12,14 +12,14 @@ import panels.other.Menu;
  *
  * @author Lobdown.com
  */
-public class SepidClinic extends JFrame {
+public class Jclinic extends JFrame {
 
-    public static SepidClinic SINGLETON;
+    public static Jclinic SINGLETON;
     public static JFrame FRAME;
     public static Menu menu;
     public static JPanel panel;
 
-    public SepidClinic() {
+    public Jclinic() {
         initComponent();
     }
 
@@ -57,15 +57,15 @@ public class SepidClinic extends JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(SepidClinic.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Jclinic.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(SepidClinic.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Jclinic.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(SepidClinic.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Jclinic.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(SepidClinic.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Jclinic.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        SepidClinic run = new SepidClinic();
+        Jclinic run = new Jclinic();
         SINGLETON = run;
     }
 

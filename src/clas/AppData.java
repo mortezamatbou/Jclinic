@@ -41,7 +41,7 @@ public class AppData {
         BasicInternalFrameUI bi = (BasicInternalFrameUI) detailsFrame.getUI();
         bi.setNorthPane(null);
 
-        sepidclinic.SepidClinic.FRAME.getContentPane().add(detailsFrame);
+        jclinic.Jclinic.FRAME.getContentPane().add(detailsFrame);
         detailsFrame.setVisible(true);
         detailsFrame.validate();
         detailsFrame.repaint();

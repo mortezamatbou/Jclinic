@@ -26,7 +26,7 @@ import javax.swing.JOptionPane;
 import javax.swing.KeyStroke;
 import javax.swing.UIManager;
 import panels.importdata.ImportData;
-import sepidclinic.SepidClinic;
+import jclinic.Jclinic;
 
 /**
  *
@@ -147,7 +147,7 @@ public class Menu implements ActionListener {
         Object o = e.getSource();
         if (o != logout && o != exit && o != addData && o != setting && o != backup) {
             AppData.detailsFrame.dispose();
-            SepidClinic.FRAME.getContentPane().removeAll();
+            Jclinic.FRAME.getContentPane().removeAll();
         }
 
         if (o == exit) {
@@ -157,11 +157,11 @@ public class Menu implements ActionListener {
                 System.exit(0);
             }
         } else if (o == today) {
-            SepidClinic.FRAME.getContentPane().add(new Welcome(), BorderLayout.CENTER);
+            Jclinic.FRAME.getContentPane().add(new Welcome(), BorderLayout.CENTER);
         } else if (o == search) {
-            SepidClinic.FRAME.getContentPane().add(new Search(), BorderLayout.CENTER);
+            Jclinic.FRAME.getContentPane().add(new Search(), BorderLayout.CENTER);
         } else if (o == user) {
-            SepidClinic.FRAME.getContentPane().add(new User(), BorderLayout.CENTER);
+            Jclinic.FRAME.getContentPane().add(new User(), BorderLayout.CENTER);
 //        } else if (o == drug) {
 //            SepidClinic.FRAME.getContentPane().add(new Drug(), BorderLayout.CENTER);
         } else if (o == logout) {
@@ -171,10 +171,10 @@ public class Menu implements ActionListener {
                 AppData.USER_LOGGED = false;
                 AppData.USER_ID = 0;
                 AppData.USER_NAME = null;
-                SepidClinic.FRAME.setJMenuBar(null);
+                Jclinic.FRAME.setJMenuBar(null);
                 AppData.detailsFrame.dispose();
-                SepidClinic.FRAME.getContentPane().removeAll();
-                SepidClinic.FRAME.getContentPane().add(new Login());
+                Jclinic.FRAME.getContentPane().removeAll();
+                Jclinic.FRAME.getContentPane().add(new Login());
             }
 
         } else if (o == about) {
@@ -193,8 +193,8 @@ public class Menu implements ActionListener {
             }
         }
 
-        SepidClinic.FRAME.validate();
-        SepidClinic.FRAME.repaint();
+        Jclinic.FRAME.validate();
+        Jclinic.FRAME.repaint();
     }
 
 }

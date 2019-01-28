@@ -13,7 +13,7 @@ import java.awt.event.KeyListener;
 import java.io.File;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
-import sepidclinic.SepidClinic;
+import jclinic.Jclinic;
 
 /**
  *
@@ -194,11 +194,11 @@ public class Login extends javax.swing.JPanel implements KeyListener {
             if (login.checkLoginUser(user, pass)) {
                 AppData.USER_LOGGED = true;
                 AppData.USER_NAME = user;
-                SepidClinic.FRAME.getContentPane().removeAll();
-                SepidClinic.FRAME.setJMenuBar(SepidClinic.menu.menubar);
-                SepidClinic.FRAME.getContentPane().add(new Search());
-                SepidClinic.FRAME.validate();
-                SepidClinic.FRAME.repaint();
+                Jclinic.FRAME.getContentPane().removeAll();
+                Jclinic.FRAME.setJMenuBar(Jclinic.menu.menubar);
+                Jclinic.FRAME.getContentPane().add(new Search());
+                Jclinic.FRAME.validate();
+                Jclinic.FRAME.repaint();
             } else {
                 JOptionPane.showMessageDialog(this, "نام کاربری و یا رمز عبور اشتباه است", "Invalid user pass", JOptionPane.ERROR_MESSAGE);
             }
