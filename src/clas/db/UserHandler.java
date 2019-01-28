@@ -10,7 +10,7 @@ public class UserHandler extends DatabaseHandler {
 
     public ResultSet getUsers() {
         try {
-            resultSet = statement.executeQuery("SELECT * FROM user ORDER BY user_lname ASC");
+            resultSet = statement.executeQuery("SELECT * FROM user ORDER BY user_id ASC");
             return resultSet;
         } catch (Exception e) {
             return null;
