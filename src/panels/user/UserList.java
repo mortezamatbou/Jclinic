@@ -40,6 +40,7 @@ public class UserList extends javax.swing.JPanel {
                 Object[] row = new Object[columnCount];
                 row[0] = r.getObject(1);
                 row[1] = r.getObject(2) + " " + r.getObject(3);
+                row[2] = r.getObject(4);
                 model.addRow(row);
             }
         } catch (Exception e) {
