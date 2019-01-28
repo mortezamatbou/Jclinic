@@ -187,7 +187,7 @@ public class Menu implements ActionListener {
             AppData.changeSettingFrame(new Setting());
         } else if (o == backup) {
             try {
-                Desktop.getDesktop().open(new File("C:\\xampp\\mysql\\data\\sepid_db"));
+                Desktop.getDesktop().open(new File("C:\\xampp\\mysql\\data\\sepid"));
             } catch (IOException ex) {
                 
             }
