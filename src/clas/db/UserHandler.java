@@ -26,9 +26,9 @@ public class UserHandler extends DatabaseHandler {
         }
     }
 
-    public int updateUser(int id, String fname, String lname) {
+    public int updateUser(int id, String fname, String lname, int userDay) {
         try {
-            statement.executeUpdate("UPDATE user SET user_fname='" + fname + "', user_lname='" + lname + "' WHERE user_id = '" + id + "'");
+            statement.executeUpdate("UPDATE user SET user_fname='" + fname + "', user_lname='" + lname + "', user_day='" + userDay + "' WHERE user_id = '" + id + "'");
             return 1;
         } catch (Exception e) {
             return -1;
@@ -63,9 +63,9 @@ public class UserHandler extends DatabaseHandler {
 
         return null;
     }
-    public void updateUserId(String oldValue, String newValue, String fname, String lname) {
+    public void updateUserId(String oldValue, String newValue, String fname, String lname, int userDay) {
         try {
-            statement.executeUpdate("UPDATE user SET user_id='" + newValue + "', user_fname = '" + fname + "', user_lname = '" + lname + "' WHERE user_id = '" + oldValue + "'");
+            statement.executeUpdate("UPDATE user SET user_id='" + newValue + "', user_fname = '" + fname + "', user_lname = '" + lname + "' WHERE user_id = '" + oldValue + "' user_day='" + userDay + "'");
             statement.executeUpdate("UPDATE visit SET user_id='" + newValue + "' WHERE user_id = '" + oldValue + "'");
         } catch (Exception e) {
         }

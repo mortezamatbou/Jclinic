@@ -153,13 +153,13 @@ public class UserEdit extends javax.swing.JPanel {
                 if (handler.userExists(userCode.getText())) {
                     JOptionPane.showMessageDialog(this, "این شماره پرونده قبلا ثبت شده است", "مشکل در ورود اطلاعات", JOptionPane.ERROR_MESSAGE);
                 } else {
-                    // update user_fname user_lname user_id WHERE user_id = user_id
-                    handler.updateUserId(data[0], userCode.getText(), firstName.getText(), lastName.getText());
+                    // update user_fname user_lname user_id user_day WHERE user_id = user_id
+                    handler.updateUserId(data[0], userCode.getText(), firstName.getText(), lastName.getText(), userDay.getSelectedIndex()+1);
                     JOptionPane.showMessageDialog(this, "به روز رسانی اطلاعات با موفقیت انجام شد", "انجام عملیات", JOptionPane.INFORMATION_MESSAGE);
                     // Update User List table
                 }
             } else {
-                handler.updateUser(Integer.parseInt(userCode.getText()), firstName.getText(), lastName.getText());
+                handler.updateUser(Integer.parseInt(userCode.getText()), firstName.getText(), lastName.getText(), userDay.getSelectedIndex()+1);
                 JOptionPane.showMessageDialog(this, "به روز رسانی اطلاعات با موفقیت انجام شد", "انجام عملیات", JOptionPane.INFORMATION_MESSAGE);
                 // update user_name and user_afmily where user_id = userId
             }
