@@ -20,11 +20,11 @@ public class UserEdit extends javax.swing.JPanel {
     public UserEdit(String[] data) {
         initComponents();
         this.data = data;
-        jTextField2.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
-        jTextField3.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
-        jTextField1.setText(data[0]);
-        jTextField2.setText(data[1]);
-        jTextField3.setText(data[2]);
+        firstName.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
+        lastName.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
+        userCode.setText(data[0]);
+        firstName.setText(data[1]);
+        lastName.setText(data[2]);
     }
 
     /**
@@ -39,16 +39,16 @@ public class UserEdit extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        userCode = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        firstName = new javax.swing.JTextField();
+        lastName = new javax.swing.JTextField();
+        updateButton = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox();
+        userDay = new javax.swing.JComboBox();
 
         setLayout(new java.awt.GridBagLayout());
 
@@ -63,10 +63,10 @@ public class UserEdit extends javax.swing.JPanel {
 
         jLabel4.setText("نام خانوادگی");
 
-        jButton1.setText("به روزرسانی");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        updateButton.setText("به روزرسانی");
+        updateButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                updateButtonActionPerformed(evt);
             }
         });
 
@@ -78,7 +78,7 @@ public class UserEdit extends javax.swing.JPanel {
 
         jLabel7.setText("روز مراجعه");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "شنبه", "یکشنبه", "دوشنبه", "سه شنبه", "چهار شنبه", "پنج شنبه" }));
+        userDay.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "شنبه", "یکشنبه", "دوشنبه", "سه شنبه", "چهار شنبه", "پنج شنبه" }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -88,13 +88,13 @@ public class UserEdit extends javax.swing.JPanel {
                 .addGap(62, 62, 62)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton1)
+                        .addComponent(updateButton)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 254, Short.MAX_VALUE)
-                            .addComponent(jTextField1)
-                            .addComponent(jTextField3))
+                            .addComponent(firstName, javax.swing.GroupLayout.DEFAULT_SIZE, 254, Short.MAX_VALUE)
+                            .addComponent(userCode)
+                            .addComponent(lastName))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -104,7 +104,7 @@ public class UserEdit extends javax.swing.JPanel {
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(userDay, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel7))
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -124,57 +124,57 @@ public class UserEdit extends javax.swing.JPanel {
                 .addGap(30, 30, 30)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(userCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(firstName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lastName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(userDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(updateButton)
                 .addGap(28, 28, 28))
         );
 
         add(jPanel1, new java.awt.GridBagConstraints());
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void updateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateButtonActionPerformed
         if (checkForm()) {
             UserHandler handler = new UserHandler();
             if (id_changed()) {
                 // check user_id is not exist
-                if (handler.userExists(jTextField1.getText())) {
+                if (handler.userExists(userCode.getText())) {
                     JOptionPane.showMessageDialog(this, "این شماره پرونده قبلا ثبت شده است", "مشکل در ورود اطلاعات", JOptionPane.ERROR_MESSAGE);
                 } else {
                     // update user_fname user_lname user_id WHERE user_id = user_id
-                    handler.updateUserId(data[0], jTextField1.getText(), jTextField2.getText(), jTextField3.getText());
+                    handler.updateUserId(data[0], userCode.getText(), firstName.getText(), lastName.getText());
                     JOptionPane.showMessageDialog(this, "به روز رسانی اطلاعات با موفقیت انجام شد", "انجام عملیات", JOptionPane.INFORMATION_MESSAGE);
                     // Update User List table
                 }
             } else {
-                handler.updateUser(Integer.parseInt(jTextField1.getText()), jTextField2.getText(), jTextField3.getText());
+                handler.updateUser(Integer.parseInt(userCode.getText()), firstName.getText(), lastName.getText());
                 JOptionPane.showMessageDialog(this, "به روز رسانی اطلاعات با موفقیت انجام شد", "انجام عملیات", JOptionPane.INFORMATION_MESSAGE);
                 // update user_name and user_afmily where user_id = userId
             }
         } else {
             JOptionPane.showMessageDialog(this, "تمامی فیلد ها باید پر شود و یا اطلاعات وارد شده مجاز نمی باشد، در صورت عدم تغییر اطلاعات. به روز رسانی صورت نخواهئ گرفت.", "اخطار در ورود اطلاعات", JOptionPane.ERROR_MESSAGE);
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_updateButtonActionPerformed
 
     public boolean checkForm() {
-        if (jTextField1.getText().length() > 0 && jTextField2.getText().length() > 0 && jTextField3.getText().length() > 0) {
-             if (jTextField1.getText().equalsIgnoreCase(data[0]) && jTextField2.getText().equalsIgnoreCase(data[1]) && jTextField3.getText().equalsIgnoreCase(data[2])) {
+        if (userCode.getText().length() > 0 && firstName.getText().length() > 0 && lastName.getText().length() > 0) {
+             if (userCode.getText().equalsIgnoreCase(data[0]) && firstName.getText().equalsIgnoreCase(data[1]) && lastName.getText().equalsIgnoreCase(data[2])) {
                  return false;
              }
             try {
-                Integer.parseInt(jTextField1.getText());
+                Integer.parseInt(userCode.getText());
                 return true;
             } catch (Exception e) {
                 return false;
@@ -184,15 +184,14 @@ public class UserEdit extends javax.swing.JPanel {
     }
     
     public boolean id_changed() {
-        if (jTextField1.getText().equalsIgnoreCase(data[0])) {
+        if (userCode.getText().equalsIgnoreCase(data[0])) {
             return false;
         }
         return true;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JTextField firstName;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -201,8 +200,9 @@ public class UserEdit extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField lastName;
+    private javax.swing.JButton updateButton;
+    private javax.swing.JTextField userCode;
+    private javax.swing.JComboBox userDay;
     // End of variables declaration//GEN-END:variables
 }
