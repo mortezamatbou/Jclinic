@@ -50,7 +50,7 @@ public class SearchBox {
         JPanel p = new JPanel(new BorderLayout());
         
         
-        m = new DefaultTableModel(new Object[][]{}, new Object[]{"شماره پرونده", "نام", "نام خانوادگی"});
+        m = new DefaultTableModel(new Object[][]{}, new Object[]{"شماره پرونده", "نام", "نام خانوادگی", "روز مراجعه"});
         t = new JTable(m);
         t.setOpaque(false);
         t.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
@@ -84,10 +84,11 @@ public class SearchBox {
                 DefaultTableModel model = (DefaultTableModel) this.t.getModel();
                 model.setRowCount(0);
                 while (r.next()) {
-                    String[] row = new String[3];
+                    String[] row = new String[4];
                     row[0] = r.getString(1);
                     row[1] = r.getString(2);
                     row[2] = r.getString(3);
+                    row[3] = Common.getDayName(Integer.parseInt(r.getString(4)));
                     model.addRow(row);
                 }
             }
