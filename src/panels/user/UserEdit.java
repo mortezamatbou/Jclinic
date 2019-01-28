@@ -171,7 +171,7 @@ public class UserEdit extends javax.swing.JPanel {
 
     public boolean checkForm() {
         if (userCode.getText().length() > 0 && firstName.getText().length() > 0 && lastName.getText().length() > 0) {
-             if (userCode.getText().equalsIgnoreCase(data[0]) && firstName.getText().equalsIgnoreCase(data[1]) && lastName.getText().equalsIgnoreCase(data[2])) {
+             if (userCode.getText().equalsIgnoreCase(data[0]) && firstName.getText().equalsIgnoreCase(data[1]) && lastName.getText().equalsIgnoreCase(data[2]) && userDay.getSelectedIndex()+1 == Integer.parseInt(data[3])) {
                  return false;
              }
             try {
