@@ -69,8 +69,8 @@ public class UserList extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        editButton = new javax.swing.JButton();
+        deleteButton = new javax.swing.JButton();
 
         setLayout(new java.awt.BorderLayout());
 
@@ -100,28 +100,28 @@ public class UserList extends javax.swing.JPanel {
         jPanel2.setLayout(new java.awt.BorderLayout());
         add(jPanel2, java.awt.BorderLayout.CENTER);
 
-        jButton1.setText("ویرایش");
-        jButton1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        editButton.setText("ویرایش");
+        editButton.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        editButton.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        editButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                editButtonActionPerformed(evt);
             }
         });
-        jPanel3.add(jButton1);
+        jPanel3.add(editButton);
 
-        jButton2.setText("حذف");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        deleteButton.setText("حذف");
+        deleteButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                deleteButtonActionPerformed(evt);
             }
         });
-        jPanel3.add(jButton2);
+        jPanel3.add(deleteButton);
 
         add(jPanel3, java.awt.BorderLayout.PAGE_END);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void editButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editButtonActionPerformed
         if (table.getSelectedRow() != -1) {
             try {
                 String id = table.getValueAt(table.getSelectedRow(), 0) + "";
@@ -134,9 +134,9 @@ public class UserList extends javax.swing.JPanel {
             }
         }
 
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_editButtonActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
         if (JOptionPane.showConfirmDialog(this, "آیا میخواهید این بیمار حذف شود ؟ (غیر قابل بازگردانی)", "حذف ویزیت", JOptionPane.OK_CANCEL_OPTION) == JOptionPane.YES_OPTION) {
             if (table.getSelectedRow() != -1) {
                 UserHandler u = new UserHandler();
@@ -146,12 +146,12 @@ public class UserList extends javax.swing.JPanel {
                 ((DefaultTableModel)table.getModel()).removeRow(table.getSelectedRow());
             }
         }
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_deleteButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton deleteButton;
+    private javax.swing.JButton editButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
