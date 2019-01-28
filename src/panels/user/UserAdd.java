@@ -31,10 +31,10 @@ public class UserAdd extends javax.swing.JPanel {
         setName("افزودن بیمار");
         jPanel1.setOpaque(true);
         jPanel1.setBackground(new Color(0, 0, 0, 0.3f));
-        jTextField1.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
-        jTextField2.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
+        firstName.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
+        lastName.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
 
-        jTextField1.addKeyListener(new KeyAdapter() {
+        firstName.addKeyListener(new KeyAdapter() {
             @Override
             public void keyPressed(KeyEvent e) {
                 if (e.getKeyCode() == KeyEvent.VK_ENTER) {
@@ -44,7 +44,7 @@ public class UserAdd extends javax.swing.JPanel {
 
         }
         );
-        jTextField2.addKeyListener(new KeyAdapter() {
+        lastName.addKeyListener(new KeyAdapter() {
             @Override
             public void keyPressed(KeyEvent e) {
                 if (e.getKeyCode() == KeyEvent.VK_ENTER) {
@@ -54,7 +54,7 @@ public class UserAdd extends javax.swing.JPanel {
 
         }
         );
-        jTextField3.addKeyListener(new KeyAdapter() {
+        userId.addKeyListener(new KeyAdapter() {
             @Override
             public void keyPressed(KeyEvent e) {
                 if (e.getKeyCode() == KeyEvent.VK_ENTER) {
@@ -84,12 +84,12 @@ public class UserAdd extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        firstName = new javax.swing.JTextField();
+        lastName = new javax.swing.JTextField();
+        userId = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        user_day = new javax.swing.JComboBox();
+        userDay = new javax.swing.JComboBox();
 
         setPreferredSize(new java.awt.Dimension(600, 400));
         setLayout(new java.awt.GridBagLayout());
@@ -108,13 +108,13 @@ public class UserAdd extends javax.swing.JPanel {
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("شماره پرونده");
 
-        jTextField1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jTextField1.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        firstName.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        firstName.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
 
-        jTextField2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jTextField2.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        lastName.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lastName.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
 
-        jTextField3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        userId.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton1.setText("افزودن");
@@ -128,7 +128,7 @@ public class UserAdd extends javax.swing.JPanel {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("روز مراجعه");
 
-        user_day.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "شنبه", "یکشنبه", "دوشنبه", "سه شنبه", "چهار شنبه", "پنج شنبه" }));
+        userDay.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "شنبه", "یکشنبه", "دوشنبه", "سه شنبه", "چهار شنبه", "پنج شنبه" }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -140,10 +140,10 @@ public class UserAdd extends javax.swing.JPanel {
                     .addComponent(jButton1)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jTextField1)
-                            .addComponent(jTextField2)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)
-                            .addComponent(user_day, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(firstName)
+                            .addComponent(lastName)
+                            .addComponent(userId, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)
+                            .addComponent(userDay, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(43, 43, 43)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -158,18 +158,18 @@ public class UserAdd extends javax.swing.JPanel {
                 .addGap(45, 45, 45)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(firstName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(24, 24, 24)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lastName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(24, 24, 24)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(userId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(user_day, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(userDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addComponent(jButton1)
@@ -185,9 +185,9 @@ public class UserAdd extends javax.swing.JPanel {
 
     private void addUser() {
         String name, family, code;
-        name = jTextField1.getText();
-        family = jTextField2.getText();
-        code = jTextField3.getText();
+        name = firstName.getText();
+        family = lastName.getText();
+        code = userId.getText();
         if (name.length() > 0 && family.length() > 0 && code.length() > 0) {
             try {
                 int id = Integer.parseInt(code);
@@ -195,15 +195,15 @@ public class UserAdd extends javax.swing.JPanel {
                 int result = user.addUser(id, name, family);
                 if (result == 1) {
                     JOptionPane.showMessageDialog(null, "اطلاعات با موفقیت ثبت شد", "", JOptionPane.INFORMATION_MESSAGE);
-                    jTextField1.setText("");
-                    jTextField2.setText("");
-                    jTextField3.setText("");
-                    jTextField1.requestFocus();
+                    firstName.setText("");
+                    lastName.setText("");
+                    userId.setText("");
+                    firstName.requestFocus();
                     this.user.updatePanel();
                     user.closeConnection();
                 } else {
-                    jTextField3.requestFocus();
-                    jTextField3.selectAll();
+                    userId.requestFocus();
+                    userId.selectAll();
                     JOptionPane.showMessageDialog(null, "شماره پرونده تکراری می باشد", "اخطار", JOptionPane.ERROR_MESSAGE);
                 }
             } catch (Exception e) {
@@ -215,15 +215,15 @@ public class UserAdd extends javax.swing.JPanel {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField firstName;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JComboBox user_day;
+    private javax.swing.JTextField lastName;
+    private javax.swing.JComboBox userDay;
+    private javax.swing.JTextField userId;
     // End of variables declaration//GEN-END:variables
 }
