@@ -1,6 +1,7 @@
 package panels.user;
 
 import clas.AppData;
+import clas.Common;
 import clas.UserListTable;
 import clas.db.SearchHandler;
 import clas.db.UserHandler;
@@ -40,7 +41,7 @@ public class UserList extends javax.swing.JPanel {
                 Object[] row = new Object[columnCount];
                 row[0] = r.getObject(1);
                 row[1] = r.getObject(2) + " " + r.getObject(3);
-                row[2] = r.getObject(4);
+                row[2] = Common.getDayName(Integer.parseInt(r.getObject(4).toString()));
                 model.addRow(row);
             }
         } catch (Exception e) {
