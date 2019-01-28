@@ -185,19 +185,22 @@ public class UserAdd extends javax.swing.JPanel {
 
     private void addUser() {
         String name, family, code;
+        int day;
         name = firstName.getText();
         family = lastName.getText();
         code = userId.getText();
+        day = userDay.getSelectedIndex() + 1;
         if (name.length() > 0 && family.length() > 0 && code.length() > 0) {
             try {
                 int id = Integer.parseInt(code);
                 UserHandler user = new UserHandler();
-                int result = user.addUser(id, name, family);
+                int result = user.addUser(id, name, family, day);
                 if (result == 1) {
                     JOptionPane.showMessageDialog(null, "اطلاعات با موفقیت ثبت شد", "", JOptionPane.INFORMATION_MESSAGE);
                     firstName.setText("");
                     lastName.setText("");
                     userId.setText("");
+                    userDay.setSelectedIndex(0);
                     firstName.requestFocus();
                     this.user.updatePanel();
                     user.closeConnection();
