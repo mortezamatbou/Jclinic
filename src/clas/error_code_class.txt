@@ -1,0 +1,9 @@
+clas.db.DatabaseHandler                             1000-1
+
+
+panels.Search                                       2000-1
+panels.SearchDefault                                2000-11
+panels.SearchDate                                   2000-12
+panels.SearchResult                                 2000-13
+
+panels.ImportData                                   5000-1
