@@ -25,6 +25,7 @@ public class UserEdit extends javax.swing.JPanel {
         userCode.setText(data[0]);
         firstName.setText(data[1]);
         lastName.setText(data[2]);
+        userDay.setSelectedIndex(Integer.parseInt(data[3])-1);
     }
 
     /**
