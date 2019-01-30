@@ -69,6 +69,7 @@ public class UserList extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
+        userDetailsButton = new javax.swing.JButton();
         editButton = new javax.swing.JButton();
         deleteButton = new javax.swing.JButton();
 
@@ -99,6 +100,14 @@ public class UserList extends javax.swing.JPanel {
 
         jPanel2.setLayout(new java.awt.BorderLayout());
         add(jPanel2, java.awt.BorderLayout.CENTER);
+
+        userDetailsButton.setText("نمایش جزئیات");
+        userDetailsButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                userDetailsButtonActionPerformed(evt);
+            }
+        });
+        jPanel3.add(userDetailsButton);
 
         editButton.setText("ویرایش");
         editButton.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -148,6 +157,10 @@ public class UserList extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_deleteButtonActionPerformed
 
+    private void userDetailsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userDetailsButtonActionPerformed
+        
+    }//GEN-LAST:event_userDetailsButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton deleteButton;
@@ -156,5 +169,6 @@ public class UserList extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JButton userDetailsButton;
     // End of variables declaration//GEN-END:variables
 }
