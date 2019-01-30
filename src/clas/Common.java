@@ -25,6 +25,8 @@ public class Common {
                 return "چهارشنبه";
             case 6:
                 return "پنج شنبه";
+            case 7:
+                return "آزاد";
             default:
                 return "نا معلوم";
         }
@@ -44,6 +46,8 @@ public class Common {
                 return 5;
             case "پنج شنبه":
                 return 6;
+            case "آزاد":
+                return 7;
             default:
                 return 0;
         }

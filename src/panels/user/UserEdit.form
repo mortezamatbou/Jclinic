@@ -165,13 +165,14 @@
         <Component class="javax.swing.JComboBox" name="userDay">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="6">
+              <StringArray count="7">
                 <StringItem index="0" value="&#x634;&#x646;&#x628;&#x647;"/>
                 <StringItem index="1" value="&#x6cc;&#x6a9;&#x634;&#x646;&#x628;&#x647;"/>
                 <StringItem index="2" value="&#x62f;&#x648;&#x634;&#x646;&#x628;&#x647;"/>
                 <StringItem index="3" value="&#x633;&#x647; &#x634;&#x646;&#x628;&#x647;"/>
                 <StringItem index="4" value="&#x686;&#x647;&#x627;&#x631; &#x634;&#x646;&#x628;&#x647;"/>
                 <StringItem index="5" value="&#x67e;&#x646;&#x62c; &#x634;&#x646;&#x628;&#x647;"/>
+                <StringItem index="6" value="&#x622;&#x632;&#x627;&#x62f;"/>
               </StringArray>
             </Property>
           </Properties>
