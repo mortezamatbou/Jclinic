@@ -13,6 +13,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.table.DefaultTableModel;
+import panels.details.Details;
 
 /**
  *
@@ -158,7 +159,16 @@ public class UserList extends javax.swing.JPanel {
     }//GEN-LAST:event_deleteButtonActionPerformed
 
     private void userDetailsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userDetailsButtonActionPerformed
-        
+        if (table.getSelectedRow() != -1) {
+            try {
+                String id = table.getValueAt(table.getSelectedRow(), 0) + "";
+                ResultSet r = new SearchHandler().getUsers(Integer.parseInt(id));
+                r.next();
+                AppData.changeSingleSearchFrame(new Details(r));
+            } catch (SQLException ex) {
+
+            }
+        }
     }//GEN-LAST:event_userDetailsButtonActionPerformed
 
 
