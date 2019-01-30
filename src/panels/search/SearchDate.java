@@ -87,7 +87,7 @@ public class SearchDate extends javax.swing.JPanel {
 
         setLayout(new java.awt.GridBagLayout());
 
-        datePanel.setPreferredSize(new java.awt.Dimension(450, 250));
+        datePanel.setPreferredSize(new java.awt.Dimension(550, 250));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -147,7 +147,7 @@ public class SearchDate extends javax.swing.JPanel {
                 .addGroup(datePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(datePanelLayout.createSequentialGroup()
                         .addComponent(searchButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 156, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 256, Short.MAX_VALUE)
                         .addComponent(oneDaySearch)
                         .addGap(39, 39, 39)
                         .addComponent(jLabel3))
