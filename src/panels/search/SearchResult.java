@@ -13,6 +13,7 @@ import java.awt.Color;
 import java.awt.ComponentOrientation;
 import java.awt.Font;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.text.MessageFormat;
 import javax.swing.JLabel;
 import javax.swing.JScrollPane;
@@ -22,6 +23,7 @@ import javax.swing.UIManager;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import panels.details.ShowVisitDetails;
+import panels.user.UserEdit;
 
 /**
  *
@@ -105,7 +107,7 @@ public class SearchResult extends javax.swing.JPanel {
         jPanel3 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        editUser = new javax.swing.JButton();
 
         setLayout(new java.awt.BorderLayout());
 
@@ -141,7 +143,12 @@ public class SearchResult extends javax.swing.JPanel {
             }
         });
 
-        jButton3.setText("ویرایش");
+        editUser.setText("ویرایش");
+        editUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editUserActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -153,7 +160,7 @@ public class SearchResult extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addComponent(jButton2)
                 .addGap(18, 18, 18)
-                .addComponent(jButton3)
+                .addComponent(editUser)
                 .addContainerGap(413, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -163,7 +170,7 @@ public class SearchResult extends javax.swing.JPanel {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2)
-                    .addComponent(jButton3))
+                    .addComponent(editUser))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -185,6 +192,20 @@ public class SearchResult extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void editUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editUserActionPerformed
+        if (table.getSelectedRow() != -1) {
+            try {
+                String id = table.getValueAt(table.getSelectedRow(), 1) + "";
+                ResultSet r = new SearchHandler().getUsers(Integer.parseInt(id));
+                r.next();
+                String[] data = {id, r.getObject(2).toString(), r.getObject(3).toString(), r.getObject(4).toString()};
+                AppData.changeUserEditFrame(new UserEdit(data));
+            } catch (SQLException ex) {
+
+            }
+        }
+    }//GEN-LAST:event_editUserActionPerformed
+
     private void showVisitDetails(String visitId) {
         DatabaseHandler handler = new DatabaseHandler();
         ResultSet r = handler.getVisit(visitId);
@@ -193,9 +214,9 @@ public class SearchResult extends javax.swing.JPanel {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton editUser;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
