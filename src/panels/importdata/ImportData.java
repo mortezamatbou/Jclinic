@@ -1,6 +1,7 @@
 package panels.importdata;
 
 import clas.AppData;
+import clas.DateConverter;
 import clas.Logging;
 import clas.SearchBox;
 import clas.db.DatabaseHandler;
@@ -35,6 +36,8 @@ public class ImportData extends javax.swing.JPanel implements FocusListener, Key
     DatabaseHandler db;
     SearchBox box;
     Image img;
+    
+    int[] today;
 
     /**
      * Creates new form ImportData
@@ -49,6 +52,12 @@ public class ImportData extends javax.swing.JPanel implements FocusListener, Key
         jPanel3.add(doz);
         jPanel1.setBounds(AppData.importDataFrame.getX(), AppData.importDataFrame.getY(), AppData.importDataFrame.getWidth(), 100);
 
+        today = DateConverter.getDate();
+        
+        year.setValue(today[0]);
+        month.setSelectedIndex(today[1]-1);
+        day.setSelectedIndex(today[2]-1);
+        
 //        userId.addFocusListener(this);
         doz.dayCount.addFocusListener(this);
         doz.opiom.addFocusListener(this);
