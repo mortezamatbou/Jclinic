@@ -5,6 +5,9 @@
  */
 package clas;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  *
  * @author Lobdown
@@ -83,4 +86,14 @@ public class DateConverter {
         return out;
     }
 
+    public static String getToday() {
+        int y = Integer.parseInt(new SimpleDateFormat("Y").format(new Date()));
+        int m = Integer.parseInt(new SimpleDateFormat("M").format(new Date()));
+        int d = Integer.parseInt(new SimpleDateFormat("d").format(new Date()));
+        
+        int[] today = DateConverter.gregorian_to_jalali(y, m, d);
+        
+        return today[0] + "-" + today[1] + "-" + today[2];
+    }
+    
 }
