@@ -14,9 +14,11 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
+import panels.user.UserEdit;
 
 /**
  * CLASS ID = 2000-1
@@ -161,7 +163,20 @@ public class SearchDefault extends javax.swing.JPanel implements KeyListener, Fo
     }//GEN-LAST:event_queryKeyTyped
 
     private void userEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userEditActionPerformed
-        // TODO add your handling code here:
+        if (query.getText().length() == 0) {
+            JOptionPane.showMessageDialog(null, "فیلد مربوطه را پر کنید", "خطا در پردازش", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        try {
+            String id = query.getText();
+            ResultSet r = new SearchHandler().getUsers(Integer.parseInt(id));
+            r.next();
+            String[] data = {id, r.getObject(2).toString(), r.getObject(3).toString(), r.getObject(4).toString()};
+            AppData.changeUserEditFrame(new UserEdit(data));
+        } catch (SQLException ex) {
+
+        }
     }//GEN-LAST:event_userEditActionPerformed
 
     public void searchPlease() {
