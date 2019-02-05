@@ -76,6 +76,7 @@ public class SearchDefault extends javax.swing.JPanel implements KeyListener, Fo
         searchButton = new javax.swing.JButton();
         searchBox = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        userEdit = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(663, 500));
         setLayout(new java.awt.GridBagLayout());
@@ -105,6 +106,13 @@ public class SearchDefault extends javax.swing.JPanel implements KeyListener, Fo
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("شماره پرونده");
 
+        userEdit.setText("ویرایش");
+        userEdit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                userEditActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout defaultPanelLayout = new javax.swing.GroupLayout(defaultPanel);
         defaultPanel.setLayout(defaultPanelLayout);
         defaultPanelLayout.setHorizontalGroup(
@@ -114,6 +122,8 @@ public class SearchDefault extends javax.swing.JPanel implements KeyListener, Fo
                 .addGroup(defaultPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(defaultPanelLayout.createSequentialGroup()
                         .addComponent(searchButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(userEdit)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, defaultPanelLayout.createSequentialGroup()
                         .addGroup(defaultPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -134,7 +144,9 @@ public class SearchDefault extends javax.swing.JPanel implements KeyListener, Fo
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(searchBox, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(searchButton)
+                .addGroup(defaultPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(searchButton)
+                    .addComponent(userEdit))
                 .addContainerGap())
         );
 
@@ -147,6 +159,10 @@ public class SearchDefault extends javax.swing.JPanel implements KeyListener, Fo
 
     private void queryKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_queryKeyTyped
     }//GEN-LAST:event_queryKeyTyped
+
+    private void userEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userEditActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_userEditActionPerformed
 
     public void searchPlease() {
         if (query.getText().length() == 0) {
@@ -174,6 +190,7 @@ public class SearchDefault extends javax.swing.JPanel implements KeyListener, Fo
     private javax.swing.JTextField query;
     private javax.swing.JPanel searchBox;
     private javax.swing.JButton searchButton;
+    private javax.swing.JButton userEdit;
     // End of variables declaration//GEN-END:variables
 
     @Override

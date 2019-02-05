@@ -41,6 +41,8 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <Component id="searchButton" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="userEdit" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
@@ -69,7 +71,10 @@
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="searchBox" min="-2" pref="99" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="searchButton" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="searchButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="userEdit" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -117,6 +122,14 @@
             </Property>
             <Property name="text" type="java.lang.String" value="&#x634;&#x645;&#x627;&#x631;&#x647; &#x67e;&#x631;&#x648;&#x646;&#x62f;&#x647;"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="userEdit">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="&#x648;&#x6cc;&#x631;&#x627;&#x6cc;&#x634;"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="userEditActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
