@@ -78,6 +78,7 @@ public class SearchResult extends javax.swing.JPanel {
         table.getColumnModel().getColumn(2).setCellRenderer(centerRenderer);
         table.getColumnModel().getColumn(3).setCellRenderer(centerRenderer);
         table.getColumnModel().getColumn(4).setCellRenderer(centerRenderer);
+        table.getColumnModel().getColumn(5).setCellRenderer(centerRenderer);
         table.setDefaultEditor(Object.class, null);
         table.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
         table.setRowHeight(20);
