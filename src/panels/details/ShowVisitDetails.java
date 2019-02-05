@@ -91,7 +91,6 @@ public class ShowVisitDetails extends javax.swing.JPanel implements FocusListene
     void initForm() {
         userName.setText(user.getFullName());
         userId.setText(user.user_id);
-        visitDay.setText(user.visitDay);
         visitId.setText(user.visit_id);
         nextDate.setText(user.next_visit);
         doz.dayCount.setText(user.day);
@@ -163,8 +162,6 @@ public class ShowVisitDetails extends javax.swing.JPanel implements FocusListene
         jLabel7 = new javax.swing.JLabel();
         userName = new javax.swing.JLabel();
         delete = new javax.swing.JButton();
-        jLabel8 = new javax.swing.JLabel();
-        visitDay = new javax.swing.JLabel();
 
         setOpaque(false);
 
@@ -215,10 +212,6 @@ public class ShowVisitDetails extends javax.swing.JPanel implements FocusListene
             }
         });
 
-        jLabel8.setText("روز مراجعه:");
-
-        visitDay.setText("آزاد");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -250,10 +243,6 @@ public class ShowVisitDetails extends javax.swing.JPanel implements FocusListene
                                         .addGap(18, 18, 18)
                                         .addComponent(jLabel6))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(visitDay)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jLabel8)
-                                        .addGap(43, 43, 43)
                                         .addComponent(year, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(jLabel5)
@@ -292,9 +281,7 @@ public class ShowVisitDetails extends javax.swing.JPanel implements FocusListene
                             .addComponent(jLabel4)
                             .addComponent(month, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel5)
-                            .addComponent(year, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel8)
-                            .addComponent(visitDay))
+                            .addComponent(year, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(23, 23, 23)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel6)
@@ -386,7 +373,6 @@ public class ShowVisitDetails extends javax.swing.JPanel implements FocusListene
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JComboBox month;
     private javax.swing.JLabel nextDate;
@@ -394,7 +380,6 @@ public class ShowVisitDetails extends javax.swing.JPanel implements FocusListene
     private javax.swing.JButton update;
     private javax.swing.JTextField userId;
     private javax.swing.JLabel userName;
-    private javax.swing.JLabel visitDay;
     private javax.swing.JLabel visitId;
     private javax.swing.JSpinner year;
     // End of variables declaration//GEN-END:variables
