@@ -119,6 +119,20 @@ public class SearchHandler extends DatabaseHandler {
             return null;
         }
     }
+    
+    public ResultSet searchVisitDate(String date) {
+        try {
+            resultSet = statement.executeQuery("SELECT * FROM visit WHERE visit_date = '" + date + "'");
+            if (resultSet.next()) {
+                resultSet.beforeFirst();
+                return resultSet;
+            }
+            return null;
+        } catch (Exception e) {
+            return null;
+        }
+    }
+    
     public ResultSet searchBetweenPage(String userId, String start, String end, int page) {
         try {
             resultSet = statement.executeQuery("SELECT * FROM visit WHERE visit_date between '" + start + "' AND '" + end + "' AND user_id = '" + userId + "' ORDER BY visit_date ASC LIMIT 50");
