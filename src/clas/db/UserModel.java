@@ -1,5 +1,6 @@
 package clas.db;
 
+import clas.Common;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -40,6 +41,7 @@ public class UserModel extends DatabaseHandler {
             this.id = r.getString(1);
             this.firstName = r.getString(2);
             this.lastName = r.getString(3);
+            this.visitDay = Common.getDayName(Integer.parseInt(r.getString(4)));
 
             ResultSet visit = getLastVisit(id);
 

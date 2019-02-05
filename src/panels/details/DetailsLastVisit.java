@@ -33,7 +33,8 @@ public class DetailsLastVisit extends javax.swing.JPanel {
         this.userLastVisit.setText(user.visit_date);
         this.drugPeriod.setText(user.day);
         this.nextVisit.setText(user.next_visit);
-        this.visitId.setText(user.visit_id);        
+        this.visitId.setText(user.visit_id);    
+        this.visitDay.setText(user.visitDay);
     }
 
     /**
