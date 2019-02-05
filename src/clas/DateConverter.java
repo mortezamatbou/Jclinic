@@ -96,4 +96,15 @@ public class DateConverter {
         return today[0] + "-" + today[1] + "-" + today[2];
     }
     
+    public static int[] getDate() {
+        int y = Integer.parseInt(new SimpleDateFormat("Y").format(new Date()));
+        int m = Integer.parseInt(new SimpleDateFormat("M").format(new Date()));
+        int d = Integer.parseInt(new SimpleDateFormat("d").format(new Date()));
+        
+        int[] date = DateConverter.gregorian_to_jalali(y, m, d);
+        
+        return date;
+        
+    }
+    
 }
