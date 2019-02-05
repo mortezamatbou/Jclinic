@@ -35,6 +35,7 @@ public class SearchResult extends javax.swing.JPanel {
 
     /**
      * Creates new form SearchResult
+     * @param result
      */
     public SearchResult(ResultSet result) {
         initComponents();
@@ -44,11 +45,13 @@ public class SearchResult extends javax.swing.JPanel {
             DefaultTableModel model = (DefaultTableModel) table.getModel();
             try {
                 while (result.next()) {
-                    Object[] row = new Object[4];
+                    Object[] row = new Object[6];
                     row[0] = result.getObject(1);
                     row[1] = result.getObject(2);
                     row[2] = s.getUserName(Integer.parseInt(result.getObject(2).toString()));
                     row[3] = result.getObject(3);
+                    row[4] = result.getObject(5);
+                    row[5] = s.getUserDay(result.getObject(2).toString());
                     model.addRow(row);
                 }
             } catch (Exception e) {
@@ -63,7 +66,7 @@ public class SearchResult extends javax.swing.JPanel {
     }
 
     private void initTable() {
-        table = new JTable(new DefaultTableModel(new Object[]{"شناسه ویزیت", "شماره پرونده", "نام و نام خانوادگی", "تاریخ مراجعه"}, 0));
+        table = new JTable(new DefaultTableModel(new Object[]{"شناسه ویزیت", "شماره پرونده", "نام و نام خانوادگی", "تاریخ ویزیت", "تاریخ مراجعه بعدی", "روز"}, 0));
         setFont(new Font("tahoma", Font.PLAIN, 13));
         table.getTableHeader().setReorderingAllowed(false);
         DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
@@ -74,6 +77,7 @@ public class SearchResult extends javax.swing.JPanel {
         table.getColumnModel().getColumn(1).setCellRenderer(centerRenderer);
         table.getColumnModel().getColumn(2).setCellRenderer(centerRenderer);
         table.getColumnModel().getColumn(3).setCellRenderer(centerRenderer);
+        table.getColumnModel().getColumn(4).setCellRenderer(centerRenderer);
         table.setDefaultEditor(Object.class, null);
         table.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
         table.setRowHeight(20);
@@ -100,6 +104,7 @@ public class SearchResult extends javax.swing.JPanel {
         jPanel3 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
 
         setLayout(new java.awt.BorderLayout());
 
@@ -135,6 +140,8 @@ public class SearchResult extends javax.swing.JPanel {
             }
         });
 
+        jButton3.setText("ویرایش");
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -144,7 +151,9 @@ public class SearchResult extends javax.swing.JPanel {
                 .addComponent(jButton1)
                 .addGap(18, 18, 18)
                 .addComponent(jButton2)
-                .addContainerGap(496, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jButton3)
+                .addContainerGap(413, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -152,7 +161,8 @@ public class SearchResult extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(jButton2)
+                    .addComponent(jButton3))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -184,6 +194,7 @@ public class SearchResult extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
