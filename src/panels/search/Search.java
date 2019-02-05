@@ -20,6 +20,7 @@ public class Search extends javax.swing.JPanel {
         JTabbedPane tabs = new JTabbedPane();
         tabs.add(new SearchDefault());
         tabs.add(new SearchDate());
+        tabs.add(new SearchVisitDate());
         tabs.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
         add(tabs);
         tabs.setSelectedIndex(0);
