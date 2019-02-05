@@ -122,7 +122,7 @@ public class SearchHandler extends DatabaseHandler {
     
     public ResultSet searchVisitDate(String date) {
         try {
-            resultSet = statement.executeQuery("SELECT * FROM visit WHERE visit_date = '" + date + "'");
+            resultSet = statement.executeQuery("SELECT * FROM visit WHERE next_visit = '" + date + "'");
             if (resultSet.next()) {
                 resultSet.beforeFirst();
                 return resultSet;
