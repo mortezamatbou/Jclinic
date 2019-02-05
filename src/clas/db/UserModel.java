@@ -25,6 +25,8 @@ public class UserModel extends DatabaseHandler {
     public String bupre_8;
     public String bupre_bn;
     public String opiom;
+    
+    public String visitDay;
 
     public boolean hasVisitData = false;
     public boolean hasUserData = false;

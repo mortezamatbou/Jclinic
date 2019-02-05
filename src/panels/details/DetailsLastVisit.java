@@ -59,15 +59,17 @@ public class DetailsLastVisit extends javax.swing.JPanel {
         nextVisit = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         visitId = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        visitDay = new javax.swing.JLabel();
         dozPanel = new javax.swing.JPanel();
 
         setPreferredSize(new java.awt.Dimension(400, 150));
         setLayout(new java.awt.BorderLayout());
 
-        northPanel.setPreferredSize(new java.awt.Dimension(400, 130));
+        northPanel.setPreferredSize(new java.awt.Dimension(400, 200));
         northPanel.setLayout(new java.awt.GridBagLayout());
 
-        jPanel1.setPreferredSize(new java.awt.Dimension(450, 120));
+        jPanel1.setPreferredSize(new java.awt.Dimension(450, 150));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setText("شماره پرونده: ");
@@ -107,6 +109,14 @@ public class DetailsLastVisit extends javax.swing.JPanel {
         visitId.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         visitId.setText("0000000");
 
+        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel7.setText("روز مراجعه");
+
+        visitDay.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        visitDay.setForeground(new java.awt.Color(255, 51, 51));
+        visitDay.setText("آزاد");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -126,7 +136,7 @@ public class DetailsLastVisit extends javax.swing.JPanel {
                         .addComponent(visitId)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel3)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(userId)
@@ -137,9 +147,13 @@ public class DetailsLastVisit extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel4))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(nextVisit)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(visitDay)
+                            .addComponent(nextVisit))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel5)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING))))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -163,7 +177,11 @@ public class DetailsLastVisit extends javax.swing.JPanel {
                     .addComponent(nextVisit)
                     .addComponent(jLabel3)
                     .addComponent(visitId))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(visitDay))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
         northPanel.add(jPanel1, new java.awt.GridBagConstraints());
@@ -184,12 +202,14 @@ public class DetailsLastVisit extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel nextVisit;
     private javax.swing.JPanel northPanel;
     private javax.swing.JLabel userId;
     private javax.swing.JLabel userLastVisit;
     private javax.swing.JLabel userName;
+    private javax.swing.JLabel visitDay;
     private javax.swing.JLabel visitId;
     // End of variables declaration//GEN-END:variables
 }
