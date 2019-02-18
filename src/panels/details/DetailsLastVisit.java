@@ -23,7 +23,7 @@ public class DetailsLastVisit extends javax.swing.JPanel {
         initUserInfo();
         dozPanel.add(new DozPanel(user));
         if(!user.hasVisitData) {
-            JOptionPane.showMessageDialog(null, "هیچ ویزیتی برای این بیمار وجود ندارد");
+            // JOptionPane.showMessageDialog(null, "هیچ ویزیتی برای این بیمار وجود ندارد");
         }
     }
     
