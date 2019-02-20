@@ -5,6 +5,7 @@ import clas.DateConverter;
 import clas.Logging;
 import clas.SearchBox;
 import clas.db.DatabaseHandler;
+import clas.db.SearchHandler;
 import clas.db.UserHandler;
 import clas.db.UserModel;
 import java.awt.ComponentOrientation;
@@ -98,7 +99,7 @@ public class ImportData extends javax.swing.JPanel implements FocusListener, Key
         });
 
         db = new DatabaseHandler();
-        box = new SearchBox(userId, searchBox, db);
+        box = new SearchBox(userId, searchBox, db, new SearchHandler());
 
     }
 
@@ -256,7 +257,7 @@ public class ImportData extends javax.swing.JPanel implements FocusListener, Key
                         user = new UserModel(userHandler.getUser(userId.getText()));
                         setUserInfo(user);
                         if (user.insertNewVisit()) {
-                            JOptionPane.showMessageDialog(this, "اطلاعات با موفقیت ثبت شد");
+//                            JOptionPane.showMessageDialog(this, "اطلاعات با موفقیت ثبت شد");
                             resetForm();
                         } else {
                             System.err.println("NOK");

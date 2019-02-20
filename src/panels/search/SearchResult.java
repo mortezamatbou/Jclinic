@@ -12,6 +12,7 @@ import clas.db.UserModel;
 import java.awt.Color;
 import java.awt.ComponentOrientation;
 import java.awt.Font;
+import java.awt.event.MouseEvent;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.MessageFormat;
@@ -32,17 +33,18 @@ import panels.user.UserEdit;
 public class SearchResult extends javax.swing.JPanel {
 
     JTable table;
-    
+
     SearchHandler s = new SearchHandler();
 
     /**
      * Creates new form SearchResult
+     *
      * @param result
      */
     public SearchResult(ResultSet result) {
         initComponents();
         initTable();
-        
+
         if (result != null) {
             DefaultTableModel model = (DefaultTableModel) table.getModel();
             try {
@@ -62,9 +64,20 @@ public class SearchResult extends javax.swing.JPanel {
             table = new JTable();
         }
 
+        table.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent evt) {
+
+                if (evt.getClickCount() == 2) {
+                    showVisitDetails();
+                }
+
+            }
+        });
+
         JScrollPane js = new JScrollPane(table);
         jPanel2.add(js);
-        
+
     }
 
     private void initTable() {
@@ -89,7 +102,7 @@ public class SearchResult extends javax.swing.JPanel {
         if (defaults.get("Table.alternateRowColor") == null) {
             defaults.put("Table.alternateRowColor", new Color(245, 245, 245));
         }
-        
+
         table.setShowVerticalLines(false);
     }
 
@@ -187,9 +200,7 @@ public class SearchResult extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        if (table.getSelectedRow() != -1) {
-            showVisitDetails(table.getValueAt(table.getSelectedRow(), 0).toString());
-        }
+        showVisitDetails();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void editUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editUserActionPerformed
@@ -206,11 +217,15 @@ public class SearchResult extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_editUserActionPerformed
 
-    private void showVisitDetails(String visitId) {
-        DatabaseHandler handler = new DatabaseHandler();
-        ResultSet r = handler.getVisit(visitId);
-        ShowVisitDetails visit = new ShowVisitDetails(new UserModel(r, true));
-        AppData.changeVisitFrame(visit);
+    private void showVisitDetails() {
+        if (table.getSelectedRow() != -1) {
+            String visitId = table.getValueAt(table.getSelectedRow(), 0).toString();
+            DatabaseHandler handler = new DatabaseHandler();
+            ResultSet r = handler.getVisit(visitId);
+            ShowVisitDetails visit = new ShowVisitDetails(new UserModel(r, true));
+            AppData.changeVisitFrame(visit);
+        }
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

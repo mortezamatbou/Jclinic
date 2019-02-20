@@ -89,7 +89,7 @@ public class AppData {
 
     public static void changeSearchFrame(JPanel panel) {
         searchFrame.getContentPane().removeAll();
-        searchFrame.setSize(600, 500);
+        searchFrame.setSize(1000, 500);
         searchFrame.setIconImage(icon);
         searchFrame.setLocationRelativeTo(null);
         searchFrame.setLayout(new BorderLayout());
@@ -100,7 +100,7 @@ public class AppData {
 
     public static void changeUserEditFrame(JPanel panel) {
         userEditFrame.getContentPane().removeAll();
-        userEditFrame.setSize(500, 350);
+        userEditFrame.setSize(550, 450);
         userEditFrame.setIconImage(icon);
         userEditFrame.setResizable(false);
         userEditFrame.setLocationRelativeTo(null);

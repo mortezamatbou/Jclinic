@@ -41,7 +41,7 @@ public class SearchDate extends javax.swing.JPanel {
         datePanel.setBackground(new Color(0, 0, 0, 0.3f));
         
         db = new DatabaseHandler();
-        box = new SearchBox(userId, searchBox, db);
+        box = new SearchBox(userId, searchBox, db, search);
 
         userId.addKeyListener(new KeyAdapter() {
             @Override
@@ -87,7 +87,7 @@ public class SearchDate extends javax.swing.JPanel {
 
         setLayout(new java.awt.GridBagLayout());
 
-        datePanel.setPreferredSize(new java.awt.Dimension(550, 250));
+        datePanel.setPreferredSize(new java.awt.Dimension(750, 250));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -147,7 +147,7 @@ public class SearchDate extends javax.swing.JPanel {
                 .addGroup(datePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(datePanelLayout.createSequentialGroup()
                         .addComponent(searchButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 256, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(oneDaySearch)
                         .addGap(39, 39, 39)
                         .addComponent(jLabel3))
@@ -184,7 +184,7 @@ public class SearchDate extends javax.swing.JPanel {
                     .addComponent(userId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(searchBox, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)
+                .addComponent(searchBox, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(datePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)

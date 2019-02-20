@@ -26,6 +26,7 @@ public class UserEdit extends javax.swing.JPanel {
         firstName.setText(data[1]);
         lastName.setText(data[2]);
         userDay.setSelectedIndex(Integer.parseInt(data[3])-1);
+        tell.setText(data[4]);
     }
 
     /**
@@ -50,10 +51,12 @@ public class UserEdit extends javax.swing.JPanel {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         userDay = new javax.swing.JComboBox();
+        jLabel8 = new javax.swing.JLabel();
+        tell = new javax.swing.JTextField();
 
         setLayout(new java.awt.GridBagLayout());
 
-        jPanel1.setPreferredSize(new java.awt.Dimension(500, 350));
+        jPanel1.setPreferredSize(new java.awt.Dimension(650, 500));
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel1.setText("ویرایش مشخصات بیمار");
@@ -81,37 +84,46 @@ public class UserEdit extends javax.swing.JPanel {
 
         userDay.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "شنبه", "یکشنبه", "دوشنبه", "سه شنبه", "چهار شنبه", "پنج شنبه", "آزاد" }));
 
+        jLabel8.setText("شماره همراه");
+
+        tell.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(62, 62, 62)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(56, 56, 56)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(updateButton)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(firstName, javax.swing.GroupLayout.DEFAULT_SIZE, 254, Short.MAX_VALUE)
-                            .addComponent(userCode)
-                            .addComponent(lastName))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(userDay, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(firstName, javax.swing.GroupLayout.DEFAULT_SIZE, 254, Short.MAX_VALUE)
+                                        .addComponent(userCode)
+                                        .addComponent(lastName))
+                                    .addComponent(tell, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(userDay, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel7))
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6))))
-                .addGap(42, 42, 42))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel4)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel7)
+                                            .addComponent(jLabel8)))))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(0, 19, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel6))))
+                        .addGap(42, 42, 42))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -134,13 +146,17 @@ public class UserEdit extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(lastName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
+                .addGap(34, 34, 34)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(tell, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(40, 40, 40)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel7)
                     .addComponent(userDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addGap(35, 35, 35)
                 .addComponent(updateButton)
-                .addGap(28, 28, 28))
+                .addContainerGap(112, Short.MAX_VALUE))
         );
 
         add(jPanel1, new java.awt.GridBagConstraints());
@@ -154,13 +170,13 @@ public class UserEdit extends javax.swing.JPanel {
                 if (handler.userExists(userCode.getText())) {
                     JOptionPane.showMessageDialog(this, "این شماره پرونده قبلا ثبت شده است", "مشکل در ورود اطلاعات", JOptionPane.ERROR_MESSAGE);
                 } else {
-                    // update user_fname user_lname user_id user_day WHERE user_id = user_id
-                    handler.updateUserId(data[0], userCode.getText(), firstName.getText(), lastName.getText(), userDay.getSelectedIndex()+1);
+                    // update user_fname user_lname user_id user_day user_tell WHERE user_id = user_id
+                    handler.updateUserId(data[0], userCode.getText(), firstName.getText(), lastName.getText(), userDay.getSelectedIndex()+1, tell.getText());
                     JOptionPane.showMessageDialog(this, "به روز رسانی اطلاعات با موفقیت انجام شد", "انجام عملیات", JOptionPane.INFORMATION_MESSAGE);
                     // Update User List table
                 }
             } else {
-                handler.updateUser(Integer.parseInt(userCode.getText()), firstName.getText(), lastName.getText(), userDay.getSelectedIndex()+1);
+                handler.updateUser(Integer.parseInt(userCode.getText()), firstName.getText(), lastName.getText(), userDay.getSelectedIndex()+1, tell.getText());
                 JOptionPane.showMessageDialog(this, "به روز رسانی اطلاعات با موفقیت انجام شد", "انجام عملیات", JOptionPane.INFORMATION_MESSAGE);
                 // update user_name and user_afmily where user_id = userId
             }
@@ -170,8 +186,12 @@ public class UserEdit extends javax.swing.JPanel {
     }//GEN-LAST:event_updateButtonActionPerformed
 
     public boolean checkForm() {
-        if (userCode.getText().length() > 0 && firstName.getText().length() > 0 && lastName.getText().length() > 0) {
-             if (userCode.getText().equalsIgnoreCase(data[0]) && firstName.getText().equalsIgnoreCase(data[1]) && lastName.getText().equalsIgnoreCase(data[2]) && userDay.getSelectedIndex()+1 == Integer.parseInt(data[3])) {
+        if (userCode.getText().length() > 0 && firstName.getText().length() > 0 && lastName.getText().length() > 0 && tell.getText().length() > 0) {
+             if (userCode.getText().equalsIgnoreCase(data[0]) &&
+                     firstName.getText().equalsIgnoreCase(data[1]) &&
+                     lastName.getText().equalsIgnoreCase(data[2]) &&
+                     userDay.getSelectedIndex()+1 == Integer.parseInt(data[3]) &&
+                     tell.getText().equalsIgnoreCase(data[4])) {
                  return false;
              }
             try {
@@ -200,8 +220,10 @@ public class UserEdit extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField lastName;
+    private javax.swing.JTextField tell;
     private javax.swing.JButton updateButton;
     private javax.swing.JTextField userCode;
     private javax.swing.JComboBox userDay;

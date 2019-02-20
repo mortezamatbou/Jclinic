@@ -96,6 +96,7 @@ public class Login extends javax.swing.JPanel implements KeyListener {
         jPanel1.setPreferredSize(new java.awt.Dimension(400, 180));
 
         username.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        username.setText("admin");
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -106,6 +107,7 @@ public class Login extends javax.swing.JPanel implements KeyListener {
         jLabel4.setText("رمز عبور");
 
         password.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        password.setText("123456");
 
         loginButton.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         loginButton.setText("ورود");
@@ -135,7 +137,7 @@ public class Login extends javax.swing.JPanel implements KeyListener {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(username)
                             .addComponent(password, javax.swing.GroupLayout.DEFAULT_SIZE, 232, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 98, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)))

@@ -7,6 +7,7 @@ import clas.db.SearchHandler;
 import clas.db.UserHandler;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.event.MouseEvent;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.ImageIcon;
@@ -43,11 +44,23 @@ public class UserList extends javax.swing.JPanel {
                 row[0] = r.getObject(1);
                 row[1] = r.getObject(2) + " " + r.getObject(3);
                 row[2] = Common.getDayName(Integer.parseInt(r.getObject(4).toString()));
+                row[3] = r.getObject(5);
                 model.addRow(row);
             }
         } catch (Exception e) {
         }
 
+        table.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent evt) {
+                
+                if (evt.getClickCount() == 2) {
+                    showDetails();
+                }
+                
+            }
+        });
+        
         JScrollPane js = new JScrollPane(table);
         jPanel2.add(js);
     }
@@ -137,7 +150,7 @@ public class UserList extends javax.swing.JPanel {
                 String id = table.getValueAt(table.getSelectedRow(), 0) + "";
                 ResultSet r = new SearchHandler().getUsers(Integer.parseInt(id));
                 r.next();
-                String[] data = {id, r.getObject(2).toString(), r.getObject(3).toString(), r.getObject(4).toString()};
+                String[] data = {id, r.getObject(2).toString(), r.getObject(3).toString(), r.getObject(4).toString(), r.getObject(5).toString()};
                 AppData.changeUserEditFrame(new UserEdit(data));
             } catch (SQLException ex) {
 
@@ -159,6 +172,11 @@ public class UserList extends javax.swing.JPanel {
     }//GEN-LAST:event_deleteButtonActionPerformed
 
     private void userDetailsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userDetailsButtonActionPerformed
+        showDetails();
+    }//GEN-LAST:event_userDetailsButtonActionPerformed
+
+    
+    void showDetails() {
         if (table.getSelectedRow() != -1) {
             try {
                 String id = table.getValueAt(table.getSelectedRow(), 0) + "";
@@ -169,8 +187,7 @@ public class UserList extends javax.swing.JPanel {
 
             }
         }
-    }//GEN-LAST:event_userDetailsButtonActionPerformed
-
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton deleteButton;

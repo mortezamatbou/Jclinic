@@ -4,6 +4,7 @@ import clas.AppData;
 import clas.HistoryTable;
 import clas.db.DatabaseHandler;
 import clas.db.UserModel;
+import java.awt.event.MouseEvent;
 import java.sql.ResultSet;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -45,16 +46,29 @@ public class DetailsHistory extends javax.swing.JPanel {
             table = new JTable();
         }
 
+        table.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent evt) {
+
+                if (evt.getClickCount() == 2) {
+                    showVisitDetails();
+                }
+
+            }
+        });
+
         JScrollPane js = new JScrollPane(table);
         jPanel2.add(js);
 
     }
 
-    private void showVisitDetails(String visitId) {
-        handler = new DatabaseHandler();
-        ResultSet r = handler.getVisit(visitId);
-        ShowVisitDetails visit = new ShowVisitDetails(new UserModel(r, true));
-        AppData.changeVisitFrame(visit);
+    private void showVisitDetails() {
+        if (table.getSelectedRow() != -1) {
+            handler = new DatabaseHandler();
+            ResultSet r = handler.getVisit(table.getValueAt(table.getSelectedRow(), 0).toString());
+            ShowVisitDetails visit = new ShowVisitDetails(new UserModel(r, true));
+            AppData.changeVisitFrame(visit);
+        }
     }
 
     /**
@@ -85,9 +99,9 @@ public class DetailsHistory extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        if (table.getSelectedRow() != -1) {
-            showVisitDetails(table.getValueAt(table.getSelectedRow(), 0).toString());
-        }
+
+        showVisitDetails();
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
 

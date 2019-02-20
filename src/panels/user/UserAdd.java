@@ -16,12 +16,13 @@ import javax.swing.JOptionPane;
  * @author Lobdown.com
  */
 public class UserAdd extends javax.swing.JPanel {
-    
+
     User user;
     Image img;
 
     /**
      * Creates new form UserAdd
+     *
      * @param user
      */
     public UserAdd(User user) {
@@ -62,6 +63,25 @@ public class UserAdd extends javax.swing.JPanel {
                 }
             }
 
+        });
+        userDay.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+                    addUser();
+                }
+            }
+
+        }
+        );
+        userTell.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+                    addUser();
+                }
+            }
+
         }
         );
     }
@@ -90,11 +110,13 @@ public class UserAdd extends javax.swing.JPanel {
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         userDay = new javax.swing.JComboBox();
+        jLabel5 = new javax.swing.JLabel();
+        userTell = new javax.swing.JTextField();
 
         setPreferredSize(new java.awt.Dimension(600, 400));
         setLayout(new java.awt.GridBagLayout());
 
-        jPanel1.setPreferredSize(new java.awt.Dimension(350, 300));
+        jPanel1.setPreferredSize(new java.awt.Dimension(350, 350));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -130,26 +152,30 @@ public class UserAdd extends javax.swing.JPanel {
 
         userDay.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "شنبه", "یکشنبه", "دوشنبه", "سه شنبه", "چهار شنبه", "پنج شنبه", "آزاد" }));
 
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("شماره همراه");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(22, Short.MAX_VALUE)
+                .addContainerGap(21, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(firstName)
+                    .addComponent(lastName)
+                    .addComponent(userId, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)
+                    .addComponent(userDay, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(userTell)
+                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.LEADING))
+                .addGap(43, 43, 43)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(firstName)
-                            .addComponent(lastName)
-                            .addComponent(userId, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)
-                            .addComponent(userDay, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(43, 43, 43)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING))))
+                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabel1)
+                        .addComponent(jLabel5)))
                 .addGap(26, 26, 26))
         );
         jPanel1Layout.setVerticalGroup(
@@ -167,13 +193,17 @@ public class UserAdd extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(userId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(userTell, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(userDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
                 .addComponent(jButton1)
-                .addGap(37, 37, 37))
+                .addGap(24, 24, 24))
         );
 
         add(jPanel1, new java.awt.GridBagConstraints());
@@ -184,22 +214,24 @@ public class UserAdd extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void addUser() {
-        String name, family, code;
+        String name, family, code, tell;
         int day;
         name = firstName.getText();
         family = lastName.getText();
         code = userId.getText();
         day = userDay.getSelectedIndex() + 1;
+        tell = userTell.getText();
         if (name.length() > 0 && family.length() > 0 && code.length() > 0) {
             try {
                 int id = Integer.parseInt(code);
                 UserHandler user = new UserHandler();
-                int result = user.addUser(id, name, family, day);
+                int result = user.addUser(id, name, family, day, tell);
                 if (result == 1) {
-                    JOptionPane.showMessageDialog(null, "اطلاعات با موفقیت ثبت شد", "", JOptionPane.INFORMATION_MESSAGE);
+                    // JOptionPane.showMessageDialog(null, "اطلاعات با موفقیت ثبت شد", "", JOptionPane.INFORMATION_MESSAGE);
                     firstName.setText("");
                     lastName.setText("");
                     userId.setText("");
+                    userTell.setText("");
                     userDay.setSelectedIndex(0);
                     firstName.requestFocus();
                     this.user.updatePanel();
@@ -224,9 +256,11 @@ public class UserAdd extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField lastName;
     private javax.swing.JComboBox userDay;
     private javax.swing.JTextField userId;
+    private javax.swing.JTextField userTell;
     // End of variables declaration//GEN-END:variables
 }

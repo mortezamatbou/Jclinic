@@ -17,18 +17,18 @@ public class UserHandler extends DatabaseHandler {
         }
     }
 
-    public int addUser(int id, String fname, String lname, int day) {
+    public int addUser(int id, String fname, String lname, int day, String tell) {
         try {
-            statement.executeUpdate("INSERT INTO user (user_id, user_fname, user_lname, user_day) VALUES ('" + id + "'," + "'" + fname + "', '" + lname + "', " + day + ")");
+            statement.executeUpdate("INSERT INTO user (user_id, user_fname, user_lname, user_day, user_tell) VALUES ('" + id + "'," + "'" + fname + "', '" + lname + "', " + day + ", '" + tell + "')");
             return 1;
         } catch (Exception e) {
             return -1;
         }
     }
 
-    public int updateUser(int id, String fname, String lname, int userDay) {
+    public int updateUser(int id, String fname, String lname, int userDay, String tell) {
         try {
-            statement.executeUpdate("UPDATE user SET user_fname='" + fname + "', user_lname='" + lname + "', user_day='" + userDay + "' WHERE user_id = '" + id + "'");
+            statement.executeUpdate("UPDATE user SET user_fname='" + fname + "', user_lname='" + lname + "', user_day='" + userDay + "', user_tell='" + tell + "' WHERE user_id = '" + id + "'");
             return 1;
         } catch (Exception e) {
             return -1;
@@ -63,9 +63,9 @@ public class UserHandler extends DatabaseHandler {
 
         return null;
     }
-    public void updateUserId(String oldValue, String newValue, String fname, String lname, int userDay) {
+    public void updateUserId(String oldValue, String newValue, String fname, String lname, int userDay, String tell) {
         try {
-            statement.executeUpdate("UPDATE user SET user_id='" + newValue + "', user_fname = '" + fname + "', user_lname = '" + lname + "' WHERE user_id = '" + oldValue + "' user_day='" + userDay + "'");
+            statement.executeUpdate("UPDATE user SET user_id='" + newValue + "', user_fname = '" + fname + "', user_lname = '" + lname + "', user_day='" + userDay + "', tell='" + tell + "' WHERE user_id = '" + oldValue + "'");
             statement.executeUpdate("UPDATE visit SET user_id='" + newValue + "' WHERE user_id = '" + oldValue + "'");
         } catch (Exception e) {
         }

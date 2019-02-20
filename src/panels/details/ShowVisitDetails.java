@@ -4,6 +4,7 @@ import panels.importdata.ImportDozPanel;
 import clas.AppData;
 import clas.SearchBox;
 import clas.db.DatabaseHandler;
+import clas.db.SearchHandler;
 import clas.db.UserHandler;
 import clas.db.UserModel;
 import java.awt.Graphics;
@@ -50,7 +51,7 @@ public class ShowVisitDetails extends javax.swing.JPanel implements FocusListene
         initForm();
 
         db = new DatabaseHandler();
-        box = new SearchBox(userId, searchBox, db);
+        box = new SearchBox(userId, searchBox, db, new SearchHandler());
 
         userId.addKeyListener(new KeyAdapter() {
             @Override
