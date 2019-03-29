@@ -27,8 +27,10 @@ public class Common {
                 return "پنج شنبه";
             case 7:
                 return "آزاد";
+            case 8:
+                return "ندارد";
             default:
-                return "نا معلوم";
+                return "ندارد";
         }
     }
     
