@@ -209,7 +209,7 @@ public class SearchResult extends javax.swing.JPanel {
                 String id = table.getValueAt(table.getSelectedRow(), 1) + "";
                 ResultSet r = new SearchHandler().getUsers(Integer.parseInt(id));
                 r.next();
-                String[] data = {id, r.getObject(2).toString(), r.getObject(3).toString(), r.getObject(4).toString()};
+                String[] data = {id, r.getObject(2).toString(), r.getObject(3).toString(), r.getObject(4).toString(), r.getObject(5).toString()};
                 AppData.changeUserEditFrame(new UserEdit(data));
             } catch (SQLException ex) {
 
