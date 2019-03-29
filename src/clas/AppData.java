@@ -102,12 +102,13 @@ public class AppData {
         userEditFrame.getContentPane().removeAll();
         userEditFrame.setSize(550, 450);
         userEditFrame.setIconImage(icon);
-        userEditFrame.setResizable(false);
+//        userEditFrame.setResizable(false);
         userEditFrame.setLocationRelativeTo(null);
         userEditFrame.setLayout(new BorderLayout());
         userEditFrame.getContentPane().add(panel, BorderLayout.CENTER);
         userEditFrame.setAlwaysOnTop(true);
         userEditFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        userEditFrame.pack();
         userEditFrame.setVisible(true);
     }
     public static void changeSettingFrame(JPanel panel) {
