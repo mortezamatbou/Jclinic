@@ -9,6 +9,7 @@ import java.awt.Image;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import javax.swing.ImageIcon;
+import javax.swing.JCheckBox;
 import javax.swing.JOptionPane;
 
 /**
@@ -32,6 +33,14 @@ public class UserAdd extends javax.swing.JPanel {
         setName("افزودن بیمار");
         jPanel1.setOpaque(true);
         jPanel1.setBackground(new Color(0, 0, 0, 0.3f));
+        shanbe.setOpaque(false);
+        yekShanbe.setOpaque(false);
+        doShanbe.setOpaque(false);
+        seShanbe.setOpaque(false);
+        chaharShanbe.setOpaque(false);
+        panjShanbe.setOpaque(false);
+        nadarad.setOpaque(false);
+        azad.setOpaque(false);        
         firstName.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
         lastName.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
 
@@ -64,16 +73,16 @@ public class UserAdd extends javax.swing.JPanel {
             }
 
         });
-        userDay.addKeyListener(new KeyAdapter() {
-            @Override
-            public void keyPressed(KeyEvent e) {
-                if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-                    addUser();
-                }
-            }
-
-        }
-        );
+//        userDay.addKeyListener(new KeyAdapter() {
+//            @Override
+//            public void keyPressed(KeyEvent e) {
+//                if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+//                    addUser();
+//                }
+//            }
+//
+//        }
+//        );
         userTell.addKeyListener(new KeyAdapter() {
             @Override
             public void keyPressed(KeyEvent e) {
@@ -107,16 +116,21 @@ public class UserAdd extends javax.swing.JPanel {
         firstName = new javax.swing.JTextField();
         lastName = new javax.swing.JTextField();
         userId = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        userDay = new javax.swing.JComboBox();
         jLabel5 = new javax.swing.JLabel();
         userTell = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        shanbe = new javax.swing.JCheckBox();
+        yekShanbe = new javax.swing.JCheckBox();
+        doShanbe = new javax.swing.JCheckBox();
+        seShanbe = new javax.swing.JCheckBox();
+        chaharShanbe = new javax.swing.JCheckBox();
+        panjShanbe = new javax.swing.JCheckBox();
+        nadarad = new javax.swing.JCheckBox();
+        azad = new javax.swing.JCheckBox();
 
         setPreferredSize(new java.awt.Dimension(600, 400));
         setLayout(new java.awt.GridBagLayout());
-
-        jPanel1.setPreferredSize(new java.awt.Dimension(350, 350));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -138,6 +152,13 @@ public class UserAdd extends javax.swing.JPanel {
 
         userId.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("روز مراجعه");
+
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("شماره همراه");
+
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton1.setText("افزودن");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -146,37 +167,74 @@ public class UserAdd extends javax.swing.JPanel {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("روز مراجعه");
+        shanbe.setForeground(new java.awt.Color(255, 255, 255));
+        shanbe.setText("شنبه");
 
-        userDay.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "شنبه", "یکشنبه", "دوشنبه", "سه شنبه", "چهار شنبه", "پنج شنبه", "آزاد" }));
+        yekShanbe.setForeground(new java.awt.Color(255, 255, 255));
+        yekShanbe.setText("یکشنبه");
 
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("شماره همراه");
+        doShanbe.setForeground(new java.awt.Color(255, 255, 255));
+        doShanbe.setText("دوشنبه");
+
+        seShanbe.setForeground(new java.awt.Color(255, 255, 255));
+        seShanbe.setText("سه شنبه");
+
+        chaharShanbe.setForeground(new java.awt.Color(255, 255, 255));
+        chaharShanbe.setText("چهارشنبه");
+
+        panjShanbe.setForeground(new java.awt.Color(255, 255, 255));
+        panjShanbe.setText("پنج شنبه");
+
+        nadarad.setForeground(new java.awt.Color(255, 255, 255));
+        nadarad.setText("ندارد");
+
+        azad.setForeground(new java.awt.Color(255, 255, 255));
+        azad.setText("آزاد");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(21, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(firstName)
-                    .addComponent(lastName)
-                    .addComponent(userId, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)
-                    .addComponent(userDay, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(userTell)
-                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.LEADING))
-                .addGap(43, 43, 43)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jLabel1)
-                        .addComponent(jLabel5)))
-                .addGap(26, 26, 26))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(firstName)
+                                    .addComponent(lastName)
+                                    .addComponent(userId, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)
+                                    .addComponent(userTell)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(doShanbe)
+                                    .addComponent(panjShanbe))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(yekShanbe)
+                                    .addComponent(jLabel1)
+                                    .addComponent(chaharShanbe)
+                                    .addComponent(nadarad))))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(46, 46, 46)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel5)
+                                    .addComponent(shanbe)
+                                    .addComponent(seShanbe)
+                                    .addComponent(azad)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(43, 43, 43)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING))))
+                        .addGap(26, 26, 26))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -197,13 +255,25 @@ public class UserAdd extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(userTell, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(userDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                    .addComponent(yekShanbe)
+                    .addComponent(doShanbe)
+                    .addComponent(shanbe))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(chaharShanbe)
+                    .addComponent(panjShanbe)
+                    .addComponent(seShanbe))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(nadarad)
+                    .addComponent(azad))
+                .addGap(40, 40, 40)
                 .addComponent(jButton1)
-                .addGap(24, 24, 24))
+                .addContainerGap(54, Short.MAX_VALUE))
         );
 
         add(jPanel1, new java.awt.GridBagConstraints());
@@ -214,12 +284,11 @@ public class UserAdd extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void addUser() {
-        String name, family, code, tell;
-        int day;
+        String name, family, code, tell, day;
         name = firstName.getText();
         family = lastName.getText();
         code = userId.getText();
-        day = userDay.getSelectedIndex() + 1;
+        day = getDays();
         tell = userTell.getText();
         if (name.length() > 0 && family.length() > 0 && code.length() > 0) {
             try {
@@ -232,7 +301,7 @@ public class UserAdd extends javax.swing.JPanel {
                     lastName.setText("");
                     userId.setText("");
                     userTell.setText("");
-                    userDay.setSelectedIndex(0);
+                    cleanDays();
                     firstName.requestFocus();
                     this.user.updatePanel();
                     user.closeConnection();
@@ -248,8 +317,63 @@ public class UserAdd extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "تمامی فیلد ها پر شود", "اخطار", JOptionPane.ERROR_MESSAGE);
         }
     }
-
+    
+    private String getDays() {
+        String days = "";
+        JCheckBox[] box = {shanbe, yekShanbe, doShanbe, seShanbe, chaharShanbe, panjShanbe, azad, nadarad};
+    
+        for (JCheckBox checkbox: box) {
+            if (checkbox.isSelected()) {
+                String value = "";
+                switch (checkbox.getText()) {
+                    case "شنبه":
+                        value = "1";
+                        break;
+                    case "یکشنبه":
+                        value = "2";
+                        break;
+                    case "دوشنبه":
+                        value = "3";
+                        break;
+                    case "سه شنبه":
+                        value = "4";
+                        break;
+                    case "چهارشنبه":
+                        value = "5";
+                        break;
+                    case "پنج شنبه":
+                        value = "6";
+                        break;
+                    case "آزاد":
+                        value = "7";
+                        break;
+                    case "ندارد":
+                        value = "8";
+                        break;
+                    default:
+                        value = "8";
+                }
+                if (days.length() == 0) {
+                    days = value;
+                } else {
+                    days += "," + value;
+                }
+            }
+        }
+        // default is ندارد
+        return days.length() > 0 ? days : "8";
+    }
+    
+    private void cleanDays() {
+        JCheckBox[] box = {shanbe, yekShanbe, doShanbe, seShanbe, chaharShanbe, panjShanbe, azad, nadarad};
+        for (JCheckBox checkbox : box) {
+            checkbox.setSelected(false);
+        }
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JCheckBox azad;
+    private javax.swing.JCheckBox chaharShanbe;
+    private javax.swing.JCheckBox doShanbe;
     private javax.swing.JTextField firstName;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
@@ -259,8 +383,12 @@ public class UserAdd extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField lastName;
-    private javax.swing.JComboBox userDay;
+    private javax.swing.JCheckBox nadarad;
+    private javax.swing.JCheckBox panjShanbe;
+    private javax.swing.JCheckBox seShanbe;
+    private javax.swing.JCheckBox shanbe;
     private javax.swing.JTextField userId;
     private javax.swing.JTextField userTell;
+    private javax.swing.JCheckBox yekShanbe;
     // End of variables declaration//GEN-END:variables
 }
