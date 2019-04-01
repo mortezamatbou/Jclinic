@@ -17,7 +17,7 @@ public class UserHandler extends DatabaseHandler {
         }
     }
 
-    public int addUser(int id, String fname, String lname, int day, String tell) {
+    public int addUser(int id, String fname, String lname, String day, String tell) {
         try {
             statement.executeUpdate("INSERT INTO user (user_id, user_fname, user_lname, user_day, user_tell) VALUES ('" + id + "'," + "'" + fname + "', '" + lname + "', " + day + ", '" + tell + "')");
             return 1;
