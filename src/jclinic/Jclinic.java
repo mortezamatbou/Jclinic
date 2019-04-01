@@ -32,7 +32,7 @@ public class Jclinic extends JFrame {
         setLayout(new BorderLayout());
         getContentPane().add(new Login());
         setIconImage(new ImageIcon(getClass().getResource("/images/logo.jpeg")).getImage());
-        setTitle("Sepid Clinic");
+        setTitle("کلینیک سپید");
         setVisible(true);
         setLocationRelativeTo(null);
         setMinimumSize(new Dimension(600, 500));
