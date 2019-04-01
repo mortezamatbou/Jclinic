@@ -50,8 +50,10 @@ public class Common {
                 return 6;
             case "آزاد":
                 return 7;
+            case "ندارد":
+                return 8;
             default:
-                return 0;
+                return 8;
         }
     }
 
