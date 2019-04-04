@@ -56,5 +56,53 @@ public class Common {
                 return 8;
         }
     }
+    
+    public static String getDays(String selectedDaysString) {
+        String days = "";
+        String[] selectedDays = selectedDaysString.split(",");
+        if (selectedDays.length == 0) {
+            return "ندارد";
+        }
+        for (int i = 0; i < selectedDays.length; i++) {
+
+            String value = "";
+            switch (selectedDays[i]) {
+                case "1":
+                    value = "شنبه";
+                    break;
+                case "2":
+                    value = "یکشنبه";
+                    break;
+                case "3":
+                    value = "دوشنبه";
+                    break;
+                case "4":
+                    value = "سه شنبه";
+                    break;
+                case "5":
+                    value = "چهارشنبه";
+                    break;
+                case "6":
+                    value = "پنج شنبه";
+                    break;
+                case "7":
+                    value = "آزاد";
+                    break;
+                case "8":
+                    value = "ندارد";
+                    break;
+                default:
+                    value = "ندارد";
+            }
+            if (days.length() == 0) {
+                days = value;
+            } else {
+                days += "," + value;
+            }
+
+        }
+        // default is ندارد
+        return days.length() > 0 ? days : "ندارد";
+    }
 
 }

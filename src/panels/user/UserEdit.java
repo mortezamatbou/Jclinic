@@ -2,6 +2,7 @@ package panels.user;
 
 import clas.db.UserHandler;
 import java.awt.ComponentOrientation;
+import javax.swing.JCheckBox;
 import javax.swing.JOptionPane;
 
 /**
@@ -11,6 +12,7 @@ import javax.swing.JOptionPane;
 public class UserEdit extends javax.swing.JPanel {
 
     String data[];
+    String selectedDays = "";
     
     
     /**
@@ -25,7 +27,8 @@ public class UserEdit extends javax.swing.JPanel {
         userCode.setText(data[0]);
         firstName.setText(data[1]);
         lastName.setText(data[2]);
-        userDay.setSelectedIndex(Integer.parseInt(data[3])-1);
+        selectedDays = data[3];
+        setSelectedDays(data[3]);
         tell.setText(data[4]);
     }
 
@@ -50,9 +53,16 @@ public class UserEdit extends javax.swing.JPanel {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        userDay = new javax.swing.JComboBox();
         jLabel8 = new javax.swing.JLabel();
         tell = new javax.swing.JTextField();
+        shanbe = new javax.swing.JCheckBox();
+        seShanbe = new javax.swing.JCheckBox();
+        azad = new javax.swing.JCheckBox();
+        nadarad = new javax.swing.JCheckBox();
+        chaharShanbe = new javax.swing.JCheckBox();
+        yekShanbe = new javax.swing.JCheckBox();
+        doShanbe = new javax.swing.JCheckBox();
+        panjShanbe = new javax.swing.JCheckBox();
 
         setLayout(new java.awt.GridBagLayout());
 
@@ -82,11 +92,25 @@ public class UserEdit extends javax.swing.JPanel {
 
         jLabel7.setText("روز مراجعه");
 
-        userDay.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "شنبه", "یکشنبه", "دوشنبه", "سه شنبه", "چهار شنبه", "پنج شنبه", "آزاد" }));
-
         jLabel8.setText("شماره همراه");
 
         tell.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+
+        shanbe.setText("شنبه");
+
+        seShanbe.setText("سه شنبه");
+
+        azad.setText("آزاد");
+
+        nadarad.setText("ندارد");
+
+        chaharShanbe.setText("چهارشنبه");
+
+        yekShanbe.setText("یکشنبه");
+
+        doShanbe.setText("دوشنبه");
+
+        panjShanbe.setText("پنج شنبه");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -96,9 +120,6 @@ public class UserEdit extends javax.swing.JPanel {
                 .addGap(56, 56, 56)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(updateButton)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -106,24 +127,38 @@ public class UserEdit extends javax.swing.JPanel {
                                         .addComponent(firstName, javax.swing.GroupLayout.DEFAULT_SIZE, 254, Short.MAX_VALUE)
                                         .addComponent(userCode)
                                         .addComponent(lastName))
-                                    .addComponent(tell, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(userDay, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(tell, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jLabel4)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel7)
-                                            .addComponent(jLabel8)))))
+                                        .addComponent(jLabel8)
+                                        .addComponent(azad)
+                                        .addComponent(seShanbe)
+                                        .addComponent(shanbe))))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(0, 19, Short.MAX_VALUE)
+                                .addGap(0, 103, Short.MAX_VALUE)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel5)
                                     .addComponent(jLabel6))))
-                        .addGap(42, 42, 42))))
+                        .addGap(42, 42, 42))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(doShanbe)
+                            .addComponent(panjShanbe)
+                            .addComponent(updateButton))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(275, 275, 275)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(yekShanbe)
+                    .addComponent(jLabel7)
+                    .addComponent(chaharShanbe)
+                    .addComponent(nadarad))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -150,13 +185,25 @@ public class UserEdit extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(tell, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(40, 40, 40)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7)
-                    .addComponent(userDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(35, 35, 35)
+                .addGap(29, 29, 29)
+                .addComponent(jLabel7)
+                .addGap(28, 28, 28)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(yekShanbe)
+                    .addComponent(doShanbe)
+                    .addComponent(shanbe))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(chaharShanbe)
+                    .addComponent(panjShanbe)
+                    .addComponent(seShanbe))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(nadarad)
+                    .addComponent(azad))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                 .addComponent(updateButton)
-                .addContainerGap(112, Short.MAX_VALUE))
+                .addGap(49, 49, 49))
         );
 
         add(jPanel1, new java.awt.GridBagConstraints());
@@ -165,18 +212,19 @@ public class UserEdit extends javax.swing.JPanel {
     private void updateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateButtonActionPerformed
         if (checkForm()) {
             UserHandler handler = new UserHandler();
+            String days = getDays();
             if (id_changed()) {
                 // check user_id is not exist
                 if (handler.userExists(userCode.getText())) {
                     JOptionPane.showMessageDialog(this, "این شماره پرونده قبلا ثبت شده است", "مشکل در ورود اطلاعات", JOptionPane.ERROR_MESSAGE);
                 } else {
                     // update user_fname user_lname user_id user_day user_tell WHERE user_id = user_id
-                    handler.updateUserId(data[0], userCode.getText(), firstName.getText(), lastName.getText(), userDay.getSelectedIndex()+1, tell.getText());
+                    handler.updateUserId(data[0], userCode.getText(), firstName.getText(), lastName.getText(), days, tell.getText());
                     JOptionPane.showMessageDialog(this, "به روز رسانی اطلاعات با موفقیت انجام شد", "انجام عملیات", JOptionPane.INFORMATION_MESSAGE);
                     // Update User List table
                 }
             } else {
-                handler.updateUser(Integer.parseInt(userCode.getText()), firstName.getText(), lastName.getText(), userDay.getSelectedIndex()+1, tell.getText());
+                handler.updateUser(Integer.parseInt(userCode.getText()), firstName.getText(), lastName.getText(), days, tell.getText());
                 JOptionPane.showMessageDialog(this, "به روز رسانی اطلاعات با موفقیت انجام شد", "انجام عملیات", JOptionPane.INFORMATION_MESSAGE);
                 // update user_name and user_afmily where user_id = userId
             }
@@ -186,11 +234,12 @@ public class UserEdit extends javax.swing.JPanel {
     }//GEN-LAST:event_updateButtonActionPerformed
 
     public boolean checkForm() {
+        String days = getDays();
         if (userCode.getText().length() > 0 && firstName.getText().length() > 0 && lastName.getText().length() > 0 && tell.getText().length() > 0) {
              if (userCode.getText().equalsIgnoreCase(data[0]) &&
                      firstName.getText().equalsIgnoreCase(data[1]) &&
                      lastName.getText().equalsIgnoreCase(data[2]) &&
-                     userDay.getSelectedIndex()+1 == Integer.parseInt(data[3]) &&
+                     days == selectedDays &&
                      tell.getText().equalsIgnoreCase(data[4])) {
                  return false;
              }
@@ -210,8 +259,99 @@ public class UserEdit extends javax.swing.JPanel {
         }
         return true;
     }
-
+    
+    private void setSelectedDays(String selectedDays) {
+        this.selectedDays = selectedDays;
+        String[] explodedString = this.selectedDays.split(",");
+        if (explodedString.length > 0) {
+            setDays(explodedString);
+        }
+    }
+    
+    private String getDays() {
+        String days = "";
+        JCheckBox[] box = {shanbe, yekShanbe, doShanbe, seShanbe, chaharShanbe, panjShanbe, azad, nadarad};
+        for (JCheckBox checkbox: box) {
+            if (checkbox.isSelected()) {
+                String value = "";
+                switch (checkbox.getText()) {
+                    case "شنبه":
+                        value = "1";
+                        break;
+                    case "یکشنبه":
+                        value = "2";
+                        break;
+                    case "دوشنبه":
+                        value = "3";
+                        break;
+                    case "سه شنبه":
+                        value = "4";
+                        break;
+                    case "چهارشنبه":
+                        value = "5";
+                        break;
+                    case "پنج شنبه":
+                        value = "6";
+                        break;
+                    case "آزاد":
+                        value = "7";
+                        break;
+                    case "ندارد":
+                        value = "8";
+                        break;
+                    default:
+                        value = "8";
+                }
+                if (days.length() == 0) {
+                    days = value;
+                } else {
+                    days += "," + value;
+                }
+            }
+        }
+        // default is ندارد
+        return days.length() > 0 ? days : "8";
+    }
+    
+    private void setDays(String[] selectedDays) {
+        String days = "";
+    
+        for (int i = 0; i < selectedDays.length; i++) {
+                switch (selectedDays[i]) {
+                    case "1":
+                        shanbe.setSelected(true);
+                        break;
+                    case "2":
+                        yekShanbe.setSelected(true);
+                        break;
+                    case "3":
+                        doShanbe.setSelected(true);
+                        break;
+                    case "4":
+                        seShanbe.setSelected(true);
+                        break;
+                    case "5":
+                        chaharShanbe.setSelected(true);
+                        break;
+                    case "6":
+                        panjShanbe.setSelected(true);
+                        break;
+                    case "7":
+                        azad.setSelected(true);
+                        break;
+                    case "8":
+                        nadarad.setSelected(true);
+                        break;
+                    default:
+                        nadarad.setSelected(true);
+                }            
+        }
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JCheckBox azad;
+    private javax.swing.JCheckBox chaharShanbe;
+    private javax.swing.JCheckBox doShanbe;
     private javax.swing.JTextField firstName;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -223,9 +363,13 @@ public class UserEdit extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField lastName;
+    private javax.swing.JCheckBox nadarad;
+    private javax.swing.JCheckBox panjShanbe;
+    private javax.swing.JCheckBox seShanbe;
+    private javax.swing.JCheckBox shanbe;
     private javax.swing.JTextField tell;
     private javax.swing.JButton updateButton;
     private javax.swing.JTextField userCode;
-    private javax.swing.JComboBox userDay;
+    private javax.swing.JCheckBox yekShanbe;
     // End of variables declaration//GEN-END:variables
 }

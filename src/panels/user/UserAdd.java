@@ -289,6 +289,7 @@ public class UserAdd extends javax.swing.JPanel {
         family = lastName.getText();
         code = userId.getText();
         day = getDays();
+        System.out.println(day);
         tell = userTell.getText();
         if (name.length() > 0 && family.length() > 0 && code.length() > 0) {
             try {

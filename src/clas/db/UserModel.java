@@ -41,7 +41,7 @@ public class UserModel extends DatabaseHandler {
             this.id = r.getString(1);
             this.firstName = r.getString(2);
             this.lastName = r.getString(3);
-            this.visitDay = Common.getDayName(Integer.parseInt(r.getString(4)));
+            this.visitDay = Common.getDays(r.getString(4));
 
             ResultSet visit = getLastVisit(id);
 
