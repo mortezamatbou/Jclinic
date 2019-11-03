@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.2
+-- version 4.7.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jan 30, 2019 at 01:26 AM
--- Server version: 10.1.34-MariaDB
--- PHP Version: 7.2.7
+-- Host: localhost
+-- Generation Time: Oct 31, 2019 at 08:07 AM
+-- Server version: 10.1.22-MariaDB
+-- PHP Version: 7.1.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -40,7 +40,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`admin_id`, `admin_name`, `admin_username`, `admin_password`) VALUES
-(11253782, 'کاربر مدیر', 'admin', '123456');
+(11253782, 'Admin name', 'admin', '123456');
 
 -- --------------------------------------------------------
 
@@ -52,7 +52,8 @@ CREATE TABLE `user` (
   `user_id` int(11) NOT NULL,
   `user_fname` varchar(50) COLLATE utf8_persian_ci NOT NULL,
   `user_lname` varchar(50) COLLATE utf8_persian_ci NOT NULL,
-  `user_day` smallint(6) NOT NULL DEFAULT '1'
+  `user_day` smallint(6) NOT NULL DEFAULT '1',
+  `user_tell` varchar(11) COLLATE utf8_persian_ci DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;
 
 -- --------------------------------------------------------
@@ -109,13 +110,11 @@ ALTER TABLE `visit`
 --
 ALTER TABLE `admin`
   MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11253783;
-
 --
 -- AUTO_INCREMENT for table `visit`
 --
 ALTER TABLE `visit`
-  MODIFY `visit_id` bigint(20) NOT NULL AUTO_INCREMENT;
-COMMIT;
+  MODIFY `visit_id` bigint(20) NOT NULL AUTO_INCREMENT;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
